@@ -1,18 +1,13 @@
 import express from 'express';
 
+import './database/connection';
+
 const app = express();
 
-// Rota = conjunto
-// Recurso = usuário
-// Métodos = HTTP = GET, POST, PUT, DELETE
-// Parâmetros
+app.use(express.json());
 
-// GET = Busca um informação (Lista, item)
-// POST = Criando uma informação nova
-// PUT = Editando uma informação 
-// DELETE = Deletando uma informação 
 
-app.get('/users', (request, response) => {
+app.get('/users/', (request, response) => {
     return response.json({ message: 'Hello World' });
 });
 

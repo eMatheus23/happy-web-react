@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class createOrphanages1605225953184 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -6,44 +6,44 @@ export class createOrphanages1605225953184 implements MigrationInterface {
     // CRIAR TABLE, CRIAR UM NOVO CAMPO, DELETAR ALGUM CAMPO
     await queryRunner.createTable(
       new Table({
-        name: "orphanages",
+        name: 'orphanages',
         columns: [
           {
-            name: "id",
-            type: "integer",
+            name: 'id',
+            type: 'integer',
             unsigned: true,
             isPrimary: true,
             isGenerated: true,
-            generationStrategy: "increment",
+            generationStrategy: 'increment',
           },
           {
-            name: "name",
-            type: "varchar",
+            name: 'name',
+            type: 'varchar',
           },
           {
-            name: "latitude",
-            type: "decimal",
+            name: 'latitude',
+            type: 'decimal',
             scale: 10,
             precision: 2,
           },
           {
-            name: "longitude",
-            type: "decimal",
+            name: 'longitude',
+            type: 'decimal',
             scale: 10,
             precision: 2,
           },
           {
-              name: 'about',
-              type: 'text',              
+            name: 'about',
+            type: 'text',
           },
           {
             name: 'instructions',
-            type: 'text',              
+            type: 'text',
           },
           {
             name: 'open_on_weekends',
-            type: 'boolean', 
-            default: false,             
+            type: 'boolean',
+            default: false,
           },
         ],
       })
